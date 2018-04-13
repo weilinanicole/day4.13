@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts2/iconfont.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="iscroll">
+                <ul>
+                    <li>精选</li>
+                    <li>爱看</li>
+                    <li>电视剧</li>
+                    <li>综艺</li>
+                    <li>少儿</li>
+                    <li>电影</li>
+                    <li>历史</li>
+                    <li>记录</li>
+                    <i class="icon iconfont icon-gengduo-2"></i>
+                    <em class='on'></em>
+                </ul>
+
+            </div>
+        </header>
+        <section>
+
+            <div class="swiper-container one">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide fir">
+                        <!-- 第一页中的内容 -->
+                        <div class="swiper-containers small">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="img/1.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/2.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <ol>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+                                <li>
+                                    <img src="img/list1.png" alt="">
+                                    <h6>南方有乔木</h6>
+                                    <h5>南方有乔木</h5>
+                                </li>
+
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        第二页
+                    </div>
+                    <div class="swiper-slide">
+                        第散页
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <li class='or'>
+                <i class="icon iconfont icon-shouye"></i>
+                <span>首页</span>
+            </li>
+            <li>
+                <i class="icon iconfont icon-qqkongjian"></i>
+                <span>热点</span>
+            </li>
+            <li>
+                <i class="icon iconfont icon-pingfen"></i>
+                <span>vip会员</span>
+            </li>
+            <li>
+                <i class="icon iconfont icon-shoucang1"></i>
+                <span>doki</span>
+            </li>
+            <li>
+                <i class="icon iconfont icon-wode"></i>
+                <span>个人中心</span>
+            </li>
+        </footer>
+    </div>
+</body>
+<script src='js/iscroll.js'></script>
+<script src='js/swiper-3.4.2.min.js'></script>
+<script src='js/jquery-2.1.1.min.js'></script>
+<script>
+    var myIscroll = new IScroll('.iscroll', {
+        scrollX: true,
+        scrollY: false
+    });
+    var H = $('.on').width();
+    var Hlist = $('.iscroll ul li');
+    Hlist.on('click', function() {
+        var ind = $(this).index();
+        $('.on').css({
+            'transform': 'translate',
+            'left': ind * H
+        });
+        mySwiper.slideTo(ind)
+    });
+    var mySwiper = new Swiper('.swiper-container', {
+        // autoplay: 1000,
+        onSlideChangeStart: function(e) {
+            var index = e.activeIndex;
+            $('.iscroll ul li').css('color', 'black');
+            $('.iscroll ul li').eq(index).css('color', 'orange');
+            $('.on').css({
+                'transform': 'translate',
+                'left': index * H
+            });
+        }
+    });
+    var newSwiper = new Swiper('.swiper-containers', {
+        autoplay: 1000
+    })
+</script>
+
+</htms
